@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #1a365d;
+    --primary-light: #2c5282;
+    --secondary: #ff7f50;
+    --accent: #ffd700;
+    --text-dark: #2d3748;
+    --text-light: #ffffff;
+    --bg-light: #f7fafc;
+    --bg-dark: #1a202c;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+}
+
+/* Utils */
+.text-center { text-align: center; }
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.4);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--secondary), #ff6347);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 127, 80, 0.6);
+}
+
+.btn-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 127, 80, 0.1) 0%, transparent 70%);
+}
+
+.hero-content {
+    max-width: 900px;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    color: #94a3b8;
+}
+
+.ebook-display {
+    margin-top: 50px;
+    perspective: 1000px;
+}
+
+.ebook-display img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
+    transition: var(--transition);
+}
+
+.ebook-display img:hover {
+    transform: rotateY(-10deg) scale(1.05);
+}
+
+/* Pain Points */
+.pain-points {
+    background-color: white;
+}
+
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.pain-card {
+    background: var(--bg-light);
+    padding: 40px;
+    border-radius: 20px;
+    transition: var(--transition);
+    border: 1px solid #edf2f7;
+}
+
+.pain-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.pain-card i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+/* Transformation Section */
+.transformation {
+    background: var(--primary);
+    color: white;
+}
+
+.transformation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.benefit-list {
+    list-style: none;
+    width: 100%;
+    max-width: 700px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.benefit-item i {
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #f1f5f9;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Pricing Section */
+.pricing {
+    background: white;
+}
+
+.price-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--bg-light);
+    padding: 60px 40px;
+    border-radius: 30px;
+    border: 2px solid var(--primary);
+    position: relative;
+}
+
+.price-badge {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #718096;
+    font-size: 1.5rem;
+}
+
+.new-price {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+/* FAQ */
+.faq {
+    background: var(--bg-light);
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background: #edf2f7;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    color: #4a5568;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 200px;
+}
+
+/* Countdown */
+.countdown {
+    background: #fee2e2;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-weight: 700;
+    color: #991b1b;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-dark);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section { padding: 60px 20px; }
+    .hero { min-height: auto; }
+    .new-price { font-size: 3rem; }
+}
